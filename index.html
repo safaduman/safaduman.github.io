@@ -1,6 +1,12 @@
 <html> <!--burasi başlangıç-->
 <title>Sefa Duman'ın Websitesi</title>
-
+<style>
+    button{
+        font-size: 32px;
+        background-color: blue;
+        color: white;
+    }
+</style>
 <body>
 
     <h1>Safa Duman Kod Yazıyor...</h1>
@@ -9,13 +15,19 @@
     <button style="font-size: 64px;" onclick="uyariVer()">Sakın Tıklama</button>
 
     <br>
-    <button onclick="cevapver()">beni seviyor musun?</button>
+    <h3>beni sevıyor musun ?</h3>
+    <button onclick="evet()">EVET</button>
+    <button onclick="hayir()">HAYIR</button>
+    
 
 
 
     <script>
-        function cevapver(){
-            alert("hayır sevmiyorum");
+        function hayir(){
+            alert("çabuk siteden cık")
+        }
+        function evet(){
+            alert("teşekkürler");
         }
         function uyariVer(){
             alert("Sana Tıklama demedim mi? Şimdi bilgisayarını çökerteceğim :D ");
