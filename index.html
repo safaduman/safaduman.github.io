@@ -34,7 +34,9 @@
 
      <button onclick="no()">HAYIR</button>
 
-
+    <br>
+    <hr>
+    <button onclick="rastgeleSayiVer()">Rastgele Sayi Ver</button>
 
 
     <script>
@@ -52,6 +54,10 @@
         }
         function uyariVer(){
             alert("Sana Tıklama demedim mi? Şimdi bilgisayarını çökerteceğim :D ");
+        }
+        function rastgeleSayiVer(){
+            let rastgele_sayi = Math.floor(Math.random() * 100); // 44
+            alert(rastgele_sayi);
         }
     </script>
 
