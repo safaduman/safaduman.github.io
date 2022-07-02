@@ -76,11 +76,63 @@
 
     <button onclick="no()">HAYIR</button>
 
+    <!-- ========================================================================== -->
+
+    <br><br><br>
+    <div id="oyunPenceresi" style="background-color: #0ad17e; opacity: 0.3; width: 400px;height: 200px;display: none;">
+        <h1>Safa Duman</h1>
+        <h1>Safa Duman</h1>
+        <h1>Safa Duman</h1>
+    </div>
+    <div id="canvasKonteyner">
+        
+    </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
     <script>
+        // ======================================OYUN SCRIPTI========================================
+
+        // fonksiyon tanimladik(oluşturduk)
+        function merhabaYaz(){
+            console.log("Merhaba Safa Duman");
+            //oyun alanı fonksiyonunu çaliştırıyoz
+            oyunAlani();
+        }
+        // fonksiyonu çağırdık(çalıştırdık)
+        merhabaYaz();
+        
+
+        function oyunAlani(){
+            this.canvas = document.createElement("canvas");
+            this.canvas.width = 800;
+            this.canvas.height = 600;
+            document.getElementById("canvasKonteyner").appendChild(this.canvas);
+            // burada 2d olarak bir çizim alanı oluşturma işlemi yapılır. Böyle anlayabiliriz.
+            this.context = this.canvas.getContext("2d"); 
+            this.context.beginPath();
+            this.context.rect(100,50,600,400);
+              this.context.stroke(); 
+
+
+        }
+    
+
+
+
+        // ==============================================================================
         let uretilensayi;
 
 
