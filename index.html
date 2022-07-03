@@ -17,39 +17,26 @@
     input[type=number]:focus {
         background-color: lightblue;
     }
+
+    a {
+        padding: 10px;
+        color: rgb(255, 221, 0);
+        font-size: 32px;
+        text-decoration: none;
+    }
 </style>
 
 <body>
+    <div style="margin-top: 15px; margin-bottom: 30px; background-color: black; color: white;">
+        <a href="oyunlar.html">Oyunlar</a>
+        <a href="hakkimda.html">Hakkımda</a>
+    </div>
     <marquee behavior="scroll" direction="right">
         <h1>Safa Duman Kod Yazıyor...</h1>
     </marquee>
     <br />
 
-    <div style="background-color: lightgrey;">
-        <!-- Benim Tahmin Oyunum -->
-        <hr>
-        <button style="background-color: red;" onclick="rastgeleSayiVer()">Rastgele Sayi Ver ve Oyunu Başlat</button>
-        <br>
-        <br>
-        <div style="background-color: green; padding: 15px;">
-            <h2 style="color: white;" id="oyunBaslangicId"></h2>
-        </div>
-        <br>
-        <label for="sayi1label">Oyuncu 1 için Sayı Değeri Giriniz:</label>
-        <input type="number" name="sayi1" id="sayi1label" />
-        <label for="sayi2label">Oyuncu 2 için Sayı Değeri Giriniz:</label>
-        <input type="number" name="sayi2" id="sayi2label" />
-        <br>
-        <button style="background-color: orange;" onclick="tahminEt()">Tahmin Et</button>
-
-        <div>
-            <h2 id="sonucid"></h2>
-        </div>
-        <div>
-            <h2 id="uretilenSayiId"></h2>
-        </div>
-
-    </div>
+    
 
     <hr>
     <br><br><br>
@@ -85,7 +72,7 @@
         <h1>Safa Duman</h1>
     </div>
     <div id="canvasKonteyner">
-        
+
     </div>
 
 
@@ -106,29 +93,29 @@
         // ======================================OYUN SCRIPTI========================================
 
         // fonksiyon tanimladik(oluşturduk)
-        function merhabaYaz(){
+        function merhabaYaz() {
             console.log("Merhaba Safa Duman");
             //oyun alanı fonksiyonunu çaliştırıyoz
             oyunAlani();
         }
         // fonksiyonu çağırdık(çalıştırdık)
         merhabaYaz();
-        
 
-        function oyunAlani(){
+
+        function oyunAlani() {
             this.canvas = document.createElement("canvas");
             this.canvas.width = 800;
             this.canvas.height = 600;
             document.getElementById("canvasKonteyner").appendChild(this.canvas);
             // burada 2d olarak bir çizim alanı oluşturma işlemi yapılır. Böyle anlayabiliriz.
-            this.context = this.canvas.getContext("2d"); 
+            this.context = this.canvas.getContext("2d");
             this.context.beginPath();
-            this.context.rect(100,50,600,400);
-              this.context.stroke(); 
+            this.context.rect(100, 50, 600, 400);
+            this.context.stroke();
 
 
         }
-    
+
 
 
 
@@ -151,32 +138,7 @@
         function uyariVer() {
             alert("Sana Tıklama demedim mi? Şimdi bilgisayarını çökerteceğim :D ");
         }
-        function rastgeleSayiVer() {
-            uretilensayi = Math.floor(Math.random() * 100);
-            document.getElementById("oyunBaslangicId").innerText = "Oyun başladı! İyi olan kazansın!.."
-        }
-        function tahminEt() {
-            let sayi1 = document.getElementById("sayi1label").value;
-            let sayi2 = document.getElementById("sayi2label").value;
-
-            let fark1 = Math.abs(uretilensayi - sayi1);
-            let fark2 = Math.abs(uretilensayi - sayi2);
-
-            let sonuc;
-
-            if (fark1 < fark2) {
-                sonuc = "oyuncu 1 yaklaştı";
-            }
-            if (fark2 < fark1) {
-                sonuc = "oyuncu 2 yaklaştı";
-
-            }
-            sonuc = "Oyunun sonucu: " + sonuc;
-            document.getElementById("sonucid").innerText = sonuc;
-            document.getElementById("uretilenSayiId").innerText = "Üretilen sayi: " + uretilensayi;
-
-
-        }
+       
     </script>
 
 </body>

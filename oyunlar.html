@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oyunlar sayfası</title>
+    <style>
+        a {
+            padding: 10px;
+            color: rgb(255, 221, 0);
+            font-size: 32px;
+            text-decoration: none;
+        }
+        button {
+        font-size: 32px;
+        background-color: blue;
+        color: white;
+    }
+
+    input[type=number] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+
+    input[type=number]:focus {
+        background-color: lightblue;
+    }
+    </style>
+</head>
+<body>
+    <div style="margin-top: 15px; margin-bottom: 30px; background-color: black; color: white;">
+        <a href="index.html">Anasayfa</a>
+    </div>
+    <div style="background-color: lightgrey;">
+        <!-- Benim Tahmin Oyunum -->
+        <hr>
+        <button style="background-color: red;" onclick="rastgeleSayiVer()">Rastgele Sayi Ver ve Oyunu Başlat</button>
+        <br>
+        <br>
+        <div style="background-color: green; padding: 15px;">
+            <h2 style="color: white;" id="oyunBaslangicId"></h2>
+        </div>
+        <br>
+        <label for="sayi1label">Oyuncu 1 için Sayı Değeri Giriniz:</label>
+        <input type="number" name="sayi1" id="sayi1label" />
+        <label for="sayi2label">Oyuncu 2 için Sayı Değeri Giriniz:</label>
+        <input type="number" name="sayi2" id="sayi2label" />
+        <br>
+        <button style="background-color: orange;" onclick="tahminEt()">Tahmin Et</button>
+
+        <div>
+            <h2 id="sonucid"></h2>
+        </div>
+        <div>
+            <h2 id="uretilenSayiId"></h2>
+        </div>
+
+    </div>
+    <script>
+         function rastgeleSayiVer() {
+            uretilensayi = Math.floor(Math.random() * 100);
+            document.getElementById("oyunBaslangicId").innerText = "Oyun başladı! İyi olan kazansın!.."
+        }
+        function tahminEt() {
+            let sayi1 = document.getElementById("sayi1label").value;
+            let sayi2 = document.getElementById("sayi2label").value;
+
+            let fark1 = Math.abs(uretilensayi - sayi1);
+            let fark2 = Math.abs(uretilensayi - sayi2);
+
+            let sonuc;
+
+            if (fark1 < fark2) {
+                sonuc = "oyuncu 1 yaklaştı";
+            }
+            if (fark2 < fark1) {
+                sonuc = "oyuncu 2 yaklaştı";
+
+            }
+            sonuc = "Oyunun sonucu: " + sonuc;
+            document.getElementById("sonucid").innerText = sonuc;
+            document.getElementById("uretilenSayiId").innerText = "Üretilen sayi: " + uretilensayi;
+
+
+        }
+    </script>
+</body>
+</html>
