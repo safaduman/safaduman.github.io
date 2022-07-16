@@ -106,12 +106,14 @@ function resimElementiOlustur() {
 }
 resimElementiOlustur();
 
+const range = (start, end, length = end - start) => Array.from({ length }, (_, i) => start + i);
 
 function butonelementiolustur() {
     var butondiv = document.getElementById("butonID");
 
 
-    sayilar = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    // sayilar = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    sayilar = range(1,10); // 1 ile 9 arasindaki sayilari getirir. 1 ve 9 dahil.. ustteki kullanim ile ayni
 
     sayilar.forEach(sayi => {
 
@@ -126,12 +128,19 @@ function butonelementiolustur() {
             var secilenButon = document.getElementById(butonID);
             secilenButon.style.backgroundColor = "red";
         }
+        // butonu butondiv'e cocuk olarak ekliyoruz 
         butondiv.appendChild(benimButonum);
 
+        // eger sayi 3'e bolunebiliyorsa <br /> etiketi eklesin ki diğer rakamlar alt satıra gelsin
+        if (sayi % 3 == 0) {
+            butondiv.appendChild(document.createElement("br"));
+        }
 
-
-
-
+        
+        
+        
+        
+        
     }); // burasi forEach bittigi yer
 
 }
@@ -140,7 +149,12 @@ butonelementiolustur();
 
 
 
+/* ODEV : 8x8 lik satranc tahtasi yapiacak butonlar ile yapilacak. 64 tane buton olacak.
+butona tiklayinca arka plan mavi olacak.
+*/ 
+function satrancTahtasiOlustur(){
 
+}
 
 
 
