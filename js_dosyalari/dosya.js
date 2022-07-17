@@ -153,8 +153,35 @@ butonelementiolustur();
 butona tiklayinca arka plan mavi olacak.
 */ 
 function satrancTahtasiOlustur(){
+var santrancdiv = document.getElementById("santrancID");
 
-}
+sayilar = range(1,65); 
+
+    sayilar.forEach(sayi => {
+
+        var benimsantranc = document.createElement("button");
+        
+        benimsantranc.textContent = sayi;
+        
+        benimsantranc.id = "sayiButonu" + sayi;
+
+        benimsantrac.onclick = function butonArkaPlanDegis() {
+            const santrancID = "sayiButonu" + sayi;
+            var secilenButon = document.getElementById(sanrtancID);
+            secilenButon.style.backgroundColor = "red";
+        }
+         
+        santrancdiv.appendChild(benimsantranc);
+
+        
+        if (sayi % 8 == 0) {
+            santrancdiv.appendChild(document.createElement("br"));
+        }
+
+
+        })
+
+        }
 
 
 
