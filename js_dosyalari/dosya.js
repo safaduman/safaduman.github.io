@@ -165,7 +165,7 @@ sayilar = range(1,65);
         
         benimsantranc.id = "sayiButonu" + sayi;
 
-        benimsantrac.onclick = function butonArkaPlanDegis() {
+        benimsantranc.onclick = function butonArkaPlanDegis() {
             const santrancID = "sayiButonu" + sayi;
             var secilenButon = document.getElementById(santrancID);
             secilenButon.style.backgroundColor = "red";
