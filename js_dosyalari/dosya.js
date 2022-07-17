@@ -152,7 +152,7 @@ butonelementiolustur();
 /* ODEV : 8x8 lik satranc tahtasi yapiacak butonlar ile yapilacak. 64 tane buton olacak.
 butona tiklayinca arka plan mavi olacak.
 */ 
-function satrancTahtasiOlustur(){
+function santrancTahtasiOlustur(){
 var santrancdiv = document.getElementById("santrancID");
 
 sayilar = range(1,65); 
@@ -183,7 +183,7 @@ sayilar = range(1,65);
 
         }
 
-        satrancTahtasiOlustur();
+        santrancTahtasiOlustur();
 
 
 
