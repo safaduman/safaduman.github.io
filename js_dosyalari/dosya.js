@@ -183,7 +183,7 @@ sayilar = range(1,65);
 
         }
 
-
+        satrancTahtasiOlustur();
 
 
 
